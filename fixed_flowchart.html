@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Flowchart - Player Statistics System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 20px;
+            padding: 20px;
+        }
+        
+        .flowchart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .box {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 15px 20px;
+            border: 2px solid #333;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            min-width: 180px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .diamond {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px;
+            border: 2px solid #333;
+            transform: rotate(45deg);
+            text-align: center;
+            font-weight: bold;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .diamond-text {
+            transform: rotate(-45deg);
+            font-size: 14px;
+        }
+        
+        .arrow {
+            font-size: 24px;
+            color: #333;
+            margin: 5px 0;
+        }
+        
+        .row {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .branch {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .branch-label {
+            font-size: 12px;
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .loop-container {
+            border: 2px dashed #666;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            margin: 10px 0;
+        }
+        
+        .loop-label {
+            font-size: 12px;
+            color: #666;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Player Statistics System Flowchart</h1>
+    
+    <div class="flowchart-container">
+        <!-- Start -->
+        <div class="box">Start</div>
+        <div class="arrow">↓</div>
+        
+        <!-- Main Menu -->
+        <div class="box">Main Menu</div>
+        <div class="arrow">↓</div>
+        
+        <!-- User Choice Decision -->
+        <div class="diamond">
+            <div class="diamond-text">User Choice</div>
+        </div>
+        
+        <!-- Three main branches -->
+        <div class="row">
+            <div class="branch">
+                <div class="branch-label">1</div>
+                <div class="arrow">↓</div>
+                <div class="box">Record Player Scores</div>
+                <div class="arrow">↓</div>
+                <div class="box">Enter Player ID</div>
+                <div class="arrow">↓</div>
+                <div class="box">Enter Number of Games</div>
+                <div class="arrow">↓</div>
+                
+                <!-- Game Data Loop -->
+                <div class="loop-container">
+                    <div class="loop-label">Game Data Entry Loop</div>
+                    <div class="box">Enter Game Data Loop</div>
+                    <div class="arrow">↓</div>
+                    <div class="box">Enter Score for Game N</div>
+                    <div class="arrow">↓</div>
+                    <div class="box">Enter Time for Game N</div>
+                    <div class="arrow">↓</div>
+                    
+                    <div class="diamond">
+                        <div class="diamond-text">More Games?</div>
+                    </div>
+                    
+                    <div class="row" style="margin-top: 15px;">
+                        <div style="text-align: center;">
+                            <div class="branch-label">Yes</div>
+                            <div style="font-size: 20px; color: #666;">↰ (loops back)</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div class="branch-label">No</div>
+                            <div class="arrow">↓</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="box">Calculate Statistics</div>
+                <div class="arrow">↓</div>
+                <div class="box">Save Data</div>
+            </div>
+            
+            <div class="branch">
+                <div class="branch-label">2</div>
+                <div class="arrow">↓</div>
+                <div class="box">Display Statistics</div>
+                <div class="arrow">↓</div>
+                <div class="box">Select Player to View</div>
+                <div class="arrow">↓</div>
+                <div class="box">Display Player Stats</div>
+            </div>
+            
+            <div class="branch">
+                <div class="branch-label">3</div>
+                <div class="arrow">↓</div>
+                <div class="box">Exit Program</div>
+                <div class="arrow">↓</div>
+                <div class="box">End</div>
+            </div>
+        </div>
+        
+        <!-- Return to Main Menu arrows -->
+        <div style="margin-top: 30px; text-align: center; color: #666;">
+            <div>← Branches 1 and 2 return to Main Menu →</div>
+        </div>
+    </div>
+</body>
+</html>
