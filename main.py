@@ -1,7 +1,7 @@
 """
-Computer Games Club Statistics Program
-A simple program to record player scores and calculate statistics
-Written in basic Python for high school level
+Games Club Statistics Program - Unit 4: Starting Project
+A simple program to record player scores and calculate statistics and write them to a txt file
+https://github.com/maxtheobaldd/u4-starting-projectfg
 """
 
 def main():
@@ -64,8 +64,7 @@ def get_player_id():
 
 def get_number_of_games():
     """
-    Gets how many games the player played
-    Must be a positive number
+    Gets how many games the player played and ensures its a positive number
     """
     while True:
         try:
@@ -245,7 +244,7 @@ def save_to_file(player_id, scores, times, highest_score, average_time):
     
     try:
         # Open file for writing ('w' means write mode)
-        # 'with' automatically closes the file when we're done
+        # 'with' automatically closes the file when im done
         with open(filename, 'w') as file:
             
             # Write a nice header
@@ -263,18 +262,18 @@ def save_to_file(player_id, scores, times, highest_score, average_time):
             file.write(f"Average Time: {average_time} minutes\n")
             file.write(f"Total Time Played: {sum(times)} minutes\n\n")
             
-            # Write detailed game data
+            # write game data
             file.write("DETAILED GAME DATA:\n")
             file.write("-" * 20 + "\n")
             
-            # Write each game's data
+            # write each games data
             for i in range(len(scores)):
                 game_num = i + 1
                 file.write(f"Game {game_num}: Score = {scores[i]:,}, Time = {times[i]} minutes\n")
             
             file.write("\n" + "=" * 40 + "\n")
             
-            # Write raw data (useful if someone wants to use it in another program)
+            # write raw data (useful if someone wants to use it in another program)
             file.write("RAW DATA:\n")
             # Convert all numbers to text and join them with commas
             scores_text = ', '.join([str(score) for score in scores])
@@ -285,7 +284,7 @@ def save_to_file(player_id, scores, times, highest_score, average_time):
         print(f"\nYour data has been saved to: {filename}")
         
     except Exception as e:
-        # If something goes wrong with saving the file
+        # file write error handling
         print(f"Oops! Couldn't save the file: {e}")
         print("Your data couldn't be saved, but everything else worked fine.")
 
@@ -309,12 +308,12 @@ def show_saved_stats():
             print("\n" + content)  # Show everything in the file
             
     except FileNotFoundError:
-        # This happens when the file doesn't exist
+        # handling target file not existing
         print(f"\nSorry, no data found for player {player_id}")
         print("Make sure you've recorded scores for this player first!")
         
     except Exception as e:
-        # This catches any other file problems
+        # catching any other file problems
         print(f"Oops! There was a problem reading the file: {e}")
     
     input("\nPress Enter to go back to the main menu...")
