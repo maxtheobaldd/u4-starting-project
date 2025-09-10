@@ -1,0 +1,22 @@
+GAMES CLUB STATISTICS REPORT
+========================================
+Report for Player: TESTONE
+========================================
+
+SUMMARY:
+--------------------
+Player ID: TESTONE
+Number of Games: 2
+Highest Score: 156
+Average Time: 4.0 minutes
+Total Time Played: 8.0 minutes
+
+DETAILED GAME DATA:
+--------------------
+Game 1: Score = 134, Time = 5.0 minutes
+Game 2: Score = 156, Time = 3.0 minutes
+
+========================================
+RAW DATA:
+Scores: 134, 156
+Times: 5.0, 3.0

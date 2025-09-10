@@ -9,9 +9,6 @@ def main():
     Main function that runs the whole program
     Shows a menu and keeps running until user wants to exit
     """
-    print("Welcome to Games Club Statistics Program")
-    print("=" * 50)
-    
     # Keep showing the menu until user chooses to exit
     while True:
         choice = show_menu()
@@ -33,7 +30,7 @@ def show_menu():
     Shows the main menu and gets the user's choice
     Returns what the user picked as a string
     """
-    print("\n" + "=" * 50)
+    print("=" * 50)
     print("GAMES CLUB STATISTICS PROGRAM")
     print("=" * 50)
     print("1. Record Player Scores")
